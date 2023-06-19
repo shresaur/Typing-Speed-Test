@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const config = require('./config.js');
+
 
 app.use(express.static('public'))
 
@@ -15,4 +17,4 @@ const userRouter = require('./routes/users')
 
 app.use('/users', userRouter)
 
-app.listen(8000)
+app.listen(8080)
