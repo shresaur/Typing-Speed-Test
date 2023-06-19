@@ -128,9 +128,10 @@ function displayTimer() {
 // Function to reset the test
 function resetTest() {
   renderNewQuote()
-  userInput.disabled = false;
+  userInput.disabled = true;
   startButton.disabled = false;
   userInput.value = '';
   result.textContent = '';
+  displayTimer()
   userInput.blur();
 }
