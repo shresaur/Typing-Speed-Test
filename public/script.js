@@ -98,25 +98,35 @@ function displayTimer() {
   x = setInterval(function() {
     
     timeRemaining -= 1;
-    timer.textContent = timeRemaining;
-    
+    if (timeRemaining < 10){
+      timer.textContent = `0:0${timeRemaining}`
+    }
+    else {
+      timer.textContent = `0:${timeRemaining}`;
+    }
     // Run when the user clicks Reset button
     if (userInput.disabled === true){
       clearInterval(x)
-      timer.textContent = '1';
+      timer.textContent = '1:00';
     }
     
     // Run when the time is up
     if (timeRemaining === 0){
       clearInterval(x)
 
-      timer.textContent = '1';
+      timer.textContent = '1:00';
 
       // Calculate the typing speed - GWPM = (Total Characters Typed / 5) / Elapsed Time (in minutes)
       const typingSpeed = Math.floor((charactersTyped / 5) / 1);
 
       // Display the result
       result.textContent = `Your typing speed is ${typingSpeed} WPM.`;
+
+      // Clear the input field
+      userInput.value = '';
+
+      // Disable input field
+      userInput.disabled = true;
 
       // Enable start button
       startButton.disabled = false;
