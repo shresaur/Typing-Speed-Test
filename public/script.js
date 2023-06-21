@@ -7,12 +7,6 @@ const resetButton = document.getElementById('reset-button');
 const result = document.getElementById('result');
 const timer = document.getElementById('timer');
 
-
-
-// Add event listeners
-startButton.addEventListener('click', startTest);
-resetButton.addEventListener('click', resetTest);
-
 // Get radom quote as text to type
 const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random'
 
@@ -32,16 +26,16 @@ async function renderNewQuote() {
   })
 }
 
-renderNewQuote()
-
-var charactersTyped = 0
-// Set the start time
-var timeRemaining = 60;
-
+let x,
+maxTime = 60,
+timeLeft = maxTime,
+numQuotes = 1,
+charactersTyped = 0
 
 // Function to start the test
 function startTest() {
   // Disable start button
+  startTimer = true;
   userInput.disabled = false;
   userInput.placeholder = "Start Typing...";
   startButton.disabled = true;
@@ -49,7 +43,7 @@ function startTest() {
   result.textContent = '';
 
   // Add event listener for user input
-  userInput.addEventListener('input', displayTimer);
+
   userInput.addEventListener('input', checkInput);
  
   // Focus on the input field
@@ -57,8 +51,11 @@ function startTest() {
 
   // Function to check the user input
   function checkInput() {
-    // Remove the event listener for user input
-    userInput.removeEventListener('input', displayTimer);
+    if (numQuotes === 1) {
+      x = setInterval(displayTimer, 1000);
+      numQuotes = 2
+    }
+
     var input = userInput.value.trim();
 
     const arrayQuote = quoteDisplay.querySelectorAll('span')
@@ -90,58 +87,41 @@ function startTest() {
   }
 }
 
-var x;
 
 // Function to start the timer
 function displayTimer() {
+  if(timeLeft > 0) {
+    timeLeft--;
+    timer.textContent = `Time left: ${timeLeft}s`;
+  } 
+  else {
+    clearInterval(x);
+    // Calculate the typing speed - GWPM = (Total Characters Typed / 5) / Elapsed Time (in minutes)
+    const typingSpeed = Math.floor((charactersTyped / 5) / 1);
 
-  x = setInterval(function() {
-    
-    timeRemaining -= 1;
-    if (timeRemaining < 10){
-      timer.textContent = `0:0${timeRemaining}`
-    }
-    else {
-      timer.textContent = `0:${timeRemaining}`;
-    }
-    // Run when the user clicks Reset button
-    if (userInput.disabled === true){
-      clearInterval(x)
-      timer.textContent = '1:00';
-    }
-    
-    // Run when the time is up
-    if (timeRemaining === 0){
-      clearInterval(x)
-
-      timer.textContent = '1:00';
-
-      // Calculate the typing speed - GWPM = (Total Characters Typed / 5) / Elapsed Time (in minutes)
-      const typingSpeed = Math.floor((charactersTyped / 5) / 1);
-
-      // Display the result
-      result.textContent = `Your typing speed is ${typingSpeed} WPM.`;
-
-      // Clear the input field
-      userInput.value = '';
-
-      // Disable input field
-      userInput.disabled = true;
-
-      // Enable start button
-      startButton.disabled = false;
-    }
-  }, 1000)
-
+    // Display the result
+    result.textContent = `Your typing speed is ${typingSpeed} WPM.`;
+    result.textContent ='';
+    userInput.disabled = true;
+  }
 }
 
 // Function to reset the test
 function resetTest() {
-  renderNewQuote()
-  userInput.disabled = true;
-  startButton.disabled = false;
-  userInput.value = '';
-  result.textContent = '';
-  displayTimer()
-  userInput.blur();
+renderNewQuote()
+clearInterval(x)
+timeLeft = 60;
+timer.textContent = `Time left: ${timeLeft}s`
+userInput.disabled = true;
+startButton.disabled = false;
+userInput.value = '';
+result.textContent = '';
+userInput.blur();
+numQuotes = 1;
+charactersTyped = 0;
 }
+
+renderNewQuote()
+// Add event listeners
+startButton.addEventListener('click', startTest);
+resetButton.addEventListener('click', resetTest);
