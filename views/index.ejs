@@ -3,27 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Typing Speed Test</title>
+  <title>Typetanic | Test your typing speed</title>
   <link rel="stylesheet" type="text/css" href="/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Varela&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Roboto+Mono:wght@300&family=Varela&display=swap" rel="stylesheet"> 
 </head>
 <body>
   <div class="container">
-    <div class="top-right-links">
-      <a href="/users/login" class="link">Login</a>
-      <a href="/users/register" class="link">Register</a>
+    <div class="top">
+      <div class="logo">
+        <span><a href="/" class="logo">typetanic</a></span>
+      </div>
+      <div class="link">
+        <a href="/users/login" class="link">Login</a>
+        <a href="/users/register" class="link">Register</a>
+      </div>
     </div>
-    <h1>Unleash Your Keyboard Ninja Skills - Conquer the Speedy Typing Challenge!</h1>
+    <div class = "mainbody">
     <p>Flex Those Fingers - Get Ready to Type the Following Quote:</p>
-    <p id="quoteDisplay"></p>
+    <p id="quoteDisplay" class="noselect"></p>
     <input type="text" id="user-input" disabled placeholder="">
-    <button id="start-button">Start</button>
-    <button id="reset-button">Reset</button>
+    <button id="start-button" class="userbuttons">Start</button>
+    <button id="reset-button" class="userbuttons">Reset</button>
     <p id="result"></p>
     <p id="timer">Time left: 60s</p>
+    </div>
+    <div class="bottom"></div>
   </div>
   <script src="/script.js"></script>
 </body>

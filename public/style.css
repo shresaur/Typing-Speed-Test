@@ -1,79 +1,124 @@
 body {
   font-family: 'Varela', sans-serif;
-  background-color: #f2f2f2;
+  background-color: #232425;
   color: #333;
-  line-height: 1.5;
   margin: 0;
   padding: 0;
 }
 
-.container {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+.mainbody {
+  margin-top: 12%;
   text-align: center;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.top-right-links {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.top {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
+.logo {
+  font-weight: bold;
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  display:flex;
+  flex-direction: column;
+  max-width: 1312px;
+  margin: 0 auto;
+  background-color: #232425;
+}
+
 
 .link {
   text-decoration: none;
-  color: #333;
+  font-weight: bold;
+  color: #e4609b;
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
 }
 
-.link:hover {
-  text-decoration: underline;
-}
 
 h1 {
   font-size: 28px;
-  margin-bottom: 20px;
-  color: black;
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+label {
+  color:#0bd3d3;
+}
+
+.inputbox {
+  height: 32px;
+  width: 296px;
+  font-size: 20px;
+  font-family: 'jaldi', sans-serif;
+  background-color:#424040;
+  border: 0px none;
+  outline: none;
+  box-shadow: inset 0 0 0 1px;
+  color:white;
+  caret-color:#e4609b;
+  padding: 8px 14px 8px 14px;
+}
+::placeholder{
+  color:#0bd3d3;
+  opacity: 2;
+}
+
+::selection {
+  background:#e4609b;
+}
+
+.noselect {
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 p {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #555;
+  color: #0bd3d3;
 }
 
 #quoteDisplay {
-  font-size: 28px;
+  font-size: 35px;
   margin-bottom: 20px;
   font-family: 'Jaldi', sans-serif;
 }
 
 #user-input {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  font-family: 'Jaldi', sans-serif;
+  position: absolute;
+  left: -9999px;
 }
 
-button {
+.userbuttons {
   padding: 10px 20px;
   margin-bottom: 10px;
   font-size: 16px;
   font-family: 'Varela', sans-serif;
-  color: #333;
-  background-color: #fff;
-  border: 2px solid #000;
-  border-radius: 0;
+  color: white;
+  background-color: black;
+  border:0;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #f2f2f2;;
+  background-color: #424040;;
 }
 
 #result {
@@ -83,44 +128,15 @@ button:hover {
 
 #timer {
   font-size: 24px;
-  font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
 }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 24px;
-  }
-  
-  p {
-    font-size: 14px;
-  }
-  
-  #quoteDisplay {
-    font-size: 16px;
-  }
-  
-  #user-input {
-    font-size: 16px;
-  }
-  
-  button {
-    font-size: 14px;
-  }
-  
-  #result {
-    font-size: 16px;
-  }
-  
-  #timer {
-    font-size: 20px;
-  }
-}
 
 .correct {
-  color: black;
+  color: white;
 }
 
 .incorrect {
-  color: red;
+  color: yellow;
   text-decoration: underline;
 }

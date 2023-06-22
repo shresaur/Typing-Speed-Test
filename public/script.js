@@ -101,7 +101,6 @@ function displayTimer() {
 
     // Display the result
     result.textContent = `Your typing speed is ${typingSpeed} WPM.`;
-    result.textContent ='';
     userInput.disabled = true;
   }
 }

@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Create Account</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Roboto+Mono:wght@300&family=Varela&display=swap" rel="stylesheet"> 
 </head>
 <body>
-  <h2>Create an Account</h2>
-  <form action="/users/register" method="post">
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" required>
-    <br><br>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" required>
-    <br><br>
-    <input type="submit" value="Register">
-  </form>
+  <div class="container">
+    <div class="top">
+      <div class="logo">
+        <span><a href="/" class="logo">typetanic</a></span>
+      </div>
+      <div class="link">
+        <a href="/users/login" class="link">Login</a>
+        <a href="/users/register" class="link">Register</a>
+      </div>
+    </div>
+    <div class = "mainbody">
+      <h2>create your account</h2>
+      <form action="/users/regsiter" method="post">
+        <input type="text" id="username" class="inputbox" name="username" placeholder="username" required>
+        <br><br>
+        <input type="password" id="password" class="inputbox" name="password" placeholder="password" required>
+        <br><br>
+        <input type="submit" value="Sign up" class="userbuttons">
+      </form>
+    </div>
+    <div class="bottom"></div>
+  </div>
+  <script src="/script.js"></script>
 </body>
 </html>
