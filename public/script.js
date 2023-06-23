@@ -38,6 +38,7 @@ function startTest() {
   startTimer = true;
   userInput.disabled = false;
   userInput.placeholder = "Start Typing...";
+  startButton.classList.add('disabled');
   startButton.disabled = true;
   // Clear any previous results
   result.textContent = '';
@@ -107,6 +108,7 @@ function displayTimer() {
 
 // Function to reset the test
 function resetTest() {
+startButton.classList.remove('disabled');
 renderNewQuote()
 clearInterval(x)
 timeLeft = 60;

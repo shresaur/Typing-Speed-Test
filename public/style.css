@@ -8,6 +8,7 @@ body {
 
 .mainbody {
   margin-top: 12%;
+  margin-bottom:30%;
   text-align: center;
 }
 
@@ -131,7 +132,10 @@ button:hover {
   font-family: 'Roboto Mono', monospace;
 }
 
-
+.footer {
+  display:flex;
+  justify-content:center;
+}
 .correct {
   color: white;
 }
@@ -139,4 +143,10 @@ button:hover {
 .incorrect {
   color: yellow;
   text-decoration: underline;
+}
+
+.disabled {
+  background-color:#424040;
+  cursor: default;
+
 }
