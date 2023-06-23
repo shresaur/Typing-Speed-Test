@@ -27,11 +27,15 @@ Typetanic is a web application that allows you to test and improve your typing s
 
 3. Install the dependencies:
 
-   ```npm install
+   ```bash
+   
+   npm install
 
 4. Start the application:
 
-   ```npm start
+   ```bash
+   
+   npm start
 
 ## Configuration
 
