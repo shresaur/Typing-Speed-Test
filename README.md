@@ -56,6 +56,7 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 - The Typetanic application was developed as a coding exercise to practice web development skills.
 - The random quotes used in the typing tests are fetched from the Quotable API.
+- More features will be coming soon!
 
 ## Contact
 
