@@ -43,6 +43,9 @@ body {
   align-items: center;
 }
 
+.link:hover {
+  color:white;
+}
 
 h1 {
   font-size: 28px;
@@ -149,4 +152,11 @@ button:hover {
   background-color:#424040;
   cursor: default;
 
+}
+
+.caret {
+  border-left: solid;
+  border-width: 0.1px;
+  margin-left: -0.1px;
+  border-color: #e4609b; /* Customize the caret color */
 }
