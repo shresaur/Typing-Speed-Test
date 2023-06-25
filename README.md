@@ -2,6 +2,8 @@
 
 Typetanic is a web application that allows you to test and improve your typing speed. It provides a user-friendly interface where you can practice typing quotes and receive feedback on your accuracy and speed. This repository contains the source code and necessary files for running the Typetanic application.
 
+![typetanic](https://github.com/shresaur/Typing-Speed-Test/assets/96402139/55a5c07c-b42c-4b08-b340-636999d7b0d3)
+
 ## Features
 
 - Random quote generation: Each time you start a typing test, a random quote is fetched from the [Quotable API](https://api.quotable.io/random) and displayed for you to type.
